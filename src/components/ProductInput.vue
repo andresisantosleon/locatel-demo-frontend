@@ -2,7 +2,7 @@
   <div>
     <input 
       type="text" 
-      v-model="Product.ID" 
+      v-model="Product.product" 
       @input="onInputEdited" 
       placeholder="Ingrese ID de producto" 
     />
@@ -19,10 +19,10 @@
 import { ref, defineEmits } from 'vue'
 
 const emit = defineEmits(['input-edited'])
-const Product = ref({ID: '',quantity: ''})
+const Product = ref({product: '',quantity: ''})
 
 const onInputEdited = () => {
-  if (Product.value.ID === '' || Product.value.quantity === '') return
+  if (Product.value.product === '' || Product.value.quantity === '') return
   emit('input-edited', Product.value)
 }
 </script>
